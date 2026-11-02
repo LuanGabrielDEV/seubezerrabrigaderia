@@ -6,10 +6,23 @@
 <title>Seu Bezerra Brigaderia · Encomendas</title>
 <meta name="description" content="Brigadeiros, ovos de colher, brownies e chocolates por encomenda em Paulista e Olinda (PE). Faça seu pedido pelo WhatsApp.">
 <meta name="theme-color" content="#2A1A12">
-<meta property="og:title" content="Seu Bezerra Brigaderia">
-<meta property="og:description" content="Trazendo felicidade em forma de doce. Encomendas em Paulista e Olinda (PE).">
-<meta property="og:image" content="img/destaque.jpg">
+<link rel="canonical" href="https://seubezerrabrigaderia.vercel.app/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Seu Bezerra Brigaderia">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://seubezerrabrigaderia.vercel.app/">
+<meta property="og:title" content="Seu Bezerra Brigaderia · Encomendas">
+<meta property="og:description" content="Brigadeiros, ovos de colher e chocolates por encomenda em Paulista e Olinda (PE). Faça seu pedido pelo WhatsApp.">
+<meta property="og:image" content="https://seubezerrabrigaderia.vercel.app/og-image.jpg">
+<meta property="og:image:secure_url" content="https://seubezerrabrigaderia.vercel.app/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo da Seu Bezerra Brigaderia sobre fundo chocolate">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seu Bezerra Brigaderia · Encomendas">
+<meta name="twitter:description" content="Brigadeiros, ovos de colher e chocolates por encomenda em Paulista e Olinda (PE).">
+<meta name="twitter:image" content="https://seubezerrabrigaderia.vercel.app/og-image.jpg">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +31,14 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<canvas id="sprinkles" aria-hidden="true"></canvas>
 <main class="page">
 
   <!-- ============ CABEÇALHO ============ -->
   <header class="head">
-    <img class="logo" src="img/logo.jpg" alt="Logo Seu Bezerra Brigaderia" width="112" height="112">
+    <span class="logo-wrap">
+      <img class="logo" src="img/logo.jpg" alt="Logo Seu Bezerra Brigaderia" width="112" height="112">
+    </span>
     <h1>Seu Bezerra<br>Brigaderia</h1>
     <p class="bio">Trazendo felicidade em forma de doce</p>
     <p class="place">

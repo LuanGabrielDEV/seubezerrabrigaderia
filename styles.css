@@ -49,7 +49,10 @@ section { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
 
 /* ---------- cabeçalho ---------- */
 .head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; margin-bottom: 6px; }
-.logo { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px var(--gold), 0 10px 30px -8px rgba(0,0,0,.6); margin-bottom: 8px; }
+.logo-wrap { position: relative; isolation: isolate; display: block; width: 120px; height: 120px; border-radius: 50%; padding: 4px; margin-bottom: 8px; box-shadow: 0 10px 30px -8px rgba(0,0,0,.6); }
+.logo-wrap::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 50%;
+  background: conic-gradient(var(--gold), #FFF1A8 8%, var(--gold) 18%, var(--gold-deep) 45%, var(--gold) 70%, #FFF1A8 82%, var(--gold)); }
+.logo { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; }
 h1 { font-family: var(--display); font-weight: 400; font-size: 1.9rem; line-height: 1.1; margin: 0; text-wrap: balance; }
 .bio { margin: 0; color: var(--cream-muted); }
 .place { margin: 0; display: flex; align-items: center; gap: 4px; color: var(--cream-muted); font-size: .92rem; }
@@ -146,4 +149,88 @@ h1 { font-family: var(--display); font-weight: 400; font-size: 1.9rem; line-heig
   .tile:hover { transform: translateY(-2px); }
   .btn-main:hover { box-shadow: 0 6px 0 var(--gold-deep); transform: translateY(-1px); }
 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+
+/* =====================================================================
+   ANIMAÇÕES — tudo dentro de "no-preference": quem desativou animações
+   no celular vê a página parada.
+   ===================================================================== */
+#sprinkles { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.page { position: relative; z-index: 1; }
+.btn-main { position: relative; overflow: hidden; isolation: isolate; }
+.tile { overflow: hidden; }
+.tile span::after { display: inline-block; margin-left: 5px; content: "→"; transition: transform .25s ease; }
+
+@keyframes rise   { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes pop    { 0% { opacity: 0; transform: scale(.55) rotate(-14deg); } 65% { opacity: 1; transform: scale(1.07) rotate(3deg); } 100% { opacity: 1; transform: none; } }
+@keyframes spin   { to { transform: rotate(360deg); } }
+@keyframes shine  { 0%, 55% { transform: translateX(-160%) skewX(-22deg); } 100% { transform: translateX(380%) skewX(-22deg); } }
+@keyframes wiggle { 0%, 84%, 100% { transform: rotate(0); } 88% { transform: rotate(-16deg) scale(1.12); } 92% { transform: rotate(13deg) scale(1.12); } 96% { transform: rotate(-6deg); } }
+@keyframes ping   { 0% { box-shadow: 0 0 0 0 rgba(143,224,174,.65); } 100% { box-shadow: 0 0 0 9px rgba(143,224,174,0); } }
+@keyframes drift  { to { background-position: 14px 0; } }
+@keyframes zoom   { from { transform: scale(1); } to { transform: scale(1.09); } }
+@keyframes fill   { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes fade   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sheet  { from { opacity: 0; transform: translateY(48px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes bob    { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* entrada em cascata */
+  .head > *, .page > .btn-main, .carousel { animation: rise .75s cubic-bezier(.2,.75,.25,1) backwards; }
+  .head > .logo-wrap { animation: pop .9s cubic-bezier(.2,.75,.25,1) backwards; }
+  .head > h1      { animation-delay: .12s; }
+  .head > .bio    { animation-delay: .2s; }
+  .head > .place  { animation-delay: .26s; }
+  .head > .status { animation-delay: .32s; }
+  .page > .btn-main { animation-delay: .4s; }
+  .carousel       { animation-delay: .5s; }
+
+  /* anel dourado girando no logo */
+  .logo-wrap::before { animation: spin 7s linear infinite; }
+
+  /* bolinha "ao vivo" do status */
+  .status.open .dot { animation: ping 1.8s ease-out infinite; }
+
+  /* brilho no botão principal + ícone do WhatsApp balançando */
+  .btn-main::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 34%; z-index: -1; pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent);
+    animation: shine 4s ease-in-out 1.6s infinite; }
+  .btn-main .ico { animation: wiggle 4s ease-in-out 2s infinite; }
+
+  /* divisor ondulado andando devagar */
+  .wavy { animation: drift 1.6s linear infinite; }
+
+  /* carrossel: zoom lento na foto ativa e texto subindo */
+  .slide img { transform-origin: 50% 60%; }
+  .slide.is-active img { animation: zoom 7s ease-out both; }
+  .slide.is-active .slide-body > *, .slide.is-active .slide-body::after { animation: rise .6s cubic-bezier(.2,.75,.25,1) backwards; }
+  .slide.is-active .slide-body > span { animation-delay: .08s; }
+  .slide.is-active .slide-body::after { animation-delay: .16s; }
+  .slide.is-active .badge { animation: bob 2.4s ease-in-out infinite; }
+
+  /* bolinha ativa vira barra de tempo enquanto o carrossel roda sozinho */
+  .dots.playing button[aria-selected="true"] { position: relative; overflow: hidden; background: rgba(245,196,0,.3); }
+  .dots.playing button[aria-selected="true"]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--gold); transform-origin: left; animation: fill 4.5s linear both; }
+
+  /* aparece ao rolar (classe colocada pelo app.js) */
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.75,.25,1); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .steps li.in b { animation: pop .7s cubic-bezier(.2,.75,.25,1) backwards; }
+  .steps li:nth-child(2).in b { animation-delay: .1s; }
+  .steps li:nth-child(3).in b { animation-delay: .2s; }
+  .steps li:nth-child(4).in b { animation-delay: .3s; }
+
+  /* toque e hover */
+  .btn, .tile, .slide, .social a { transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, opacity .65s ease; }
+  .btn:active, .tile:active, .social a:active { transform: scale(.97); }
+  .tile img { transition: transform .6s cubic-bezier(.2,.75,.25,1); }
+  .social a:hover { transform: translateY(-3px) rotate(-6deg); }
+
+  /* modal +18 */
+  .modal:not([hidden]) { animation: fade .25s ease both; }
+  .modal:not([hidden]) .modal-card { animation: sheet .4s cubic-bezier(.2,.8,.2,1) both; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .tile:hover img { transform: scale(1.08); }
+  .tile:hover span::after { transform: translateX(4px); }
+}
