@@ -29,7 +29,7 @@ Site estático: não precisa de build. Basta abrir `index.html` ou publicar a pa
 - [x] Sinal de 50% para iniciar a produção
 - [ ] Formas de pagamento (Pix? cartão?)
 - [x] Fotos em alta de ovos de colher, brigadeiros, modelados, presentes e bombons
-- [ ] Foto em alta dos brownies e da Caixa Morango & Brigadeiro (destaque)
+- [ ] Foto em alta dos brownies
 - [ ] Confirmar nomes dos produtos do carrossel
 - [ ] Sabores e preços atuais, se forem entrar na página
 
