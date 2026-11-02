@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu Bezerra Brigaderia · Encomendas</title>
+<meta name="description" content="Brigadeiros, ovos de colher, brownies e chocolates por encomenda em Paulista e Olinda (PE). Faça seu pedido pelo WhatsApp.">
+<meta name="theme-color" content="#2A1A12">
+<meta property="og:title" content="Seu Bezerra Brigaderia">
+<meta property="og:description" content="Trazendo felicidade em forma de doce. Encomendas em Paulista e Olinda (PE).">
+<meta property="og:image" content="img/destaque.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Outfit:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+
+  <!-- ============ CABEÇALHO ============ -->
+  <header class="head">
+    <img class="logo" src="img/logo.jpg" alt="Logo Seu Bezerra Brigaderia" width="112" height="112">
+    <h1>Seu Bezerra<br>Brigaderia</h1>
+    <p class="bio">Trazendo felicidade em forma de doce</p>
+    <p class="place">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      Paulista · Olinda — PE
+    </p>
+    <!-- Status: troque a classe para "status closed" e o texto quando a agenda fechar -->
+    <p class="status open"><span class="dot"></span>Encomendas abertas</p>
+  </header>
+
+  <!-- ============ AÇÃO PRINCIPAL ============ -->
+  <a class="btn btn-main" data-wa="Oi! Vim pelo link do Instagram e quero fazer uma encomenda 🍫" href="https://wa.me/5581996868253">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+    Fazer meu pedido no WhatsApp
+  </a>
+
+  <!-- ============ CARROSSEL DE DESTAQUES ============
+       Cada <a class="slide"> é um item. Para adicionar: copie um bloco, troque foto, textos e data-wa.
+       O primeiro slide é o destaque da campanha atual. -->
+  <section class="carousel" aria-roledescription="carrossel" aria-label="Destaques">
+    <div class="track" id="track" tabindex="0">
+      <a class="slide" data-wa="Oi! Vi no link e quero encomendar a Caixa Morango & Brigadeiro 🍓" href="https://wa.me/5581996868253" aria-roledescription="slide">
+        <span class="badge">Destaque</span>
+        <img src="img/destaque.jpg" alt="Caixa com brigadeiros, rosas de ganache e morangos" loading="eager">
+        <span class="slide-body">
+          <strong>Caixa Morango &amp; Brigadeiro</strong>
+          <span>Brigadeiros gourmet, rosas de ganache e morangos frescos</span>
+        </span>
+      </a>
+      <a class="slide" data-wa="Oi! Vi no link e quero encomendar a Caixa Mix de doces 🍫" href="https://wa.me/5581996868253" aria-roledescription="slide">
+        <img src="img/c-caixa-mix.jpg" alt="Caixa kraft com brigadeiros, bombons e rosas de ganache" loading="lazy">
+        <span class="slide-body">
+          <strong>Caixa Mix</strong>
+          <span>Brigadeiros, bombons e rosas de ganache numa caixa só</span>
+        </span>
+      </a>
+      <a class="slide" data-wa="Oi! Vi no link e quero encomendar brigadeiros de morango 🍓" href="https://wa.me/5581996868253" aria-roledescription="slide">
+        <img src="img/c-brigadeiro-morango.jpg" alt="Brigadeiros de morango com morango fresco em forminhas pretas" loading="lazy">
+        <span class="slide-body">
+          <strong>Brigadeiros de morango</strong>
+          <span>Com morango fresco, perfeitos para mesa de festa</span>
+        </span>
+      </a>
+      <a class="slide" data-wa="Oi! Vi no link os bombons temáticos e quero encomendar para uma data especial 🎃" href="https://wa.me/5581996868253" aria-roledescription="slide">
+        <img src="img/c-bombons-tematicos.jpg" alt="Bombons coloridos em formato de caveira, abóbora e bruxa" loading="lazy">
+        <span class="slide-body">
+          <strong>Bombons temáticos</strong>
+          <span>Formatos e cores para cada data comemorativa</span>
+        </span>
+      </a>
+      <a class="slide" data-wa="Oi! Vi no link a caixinha com 4 bombons e quero encomendar 🎁" href="https://wa.me/5581996868253" aria-roledescription="slide">
+        <img src="img/c-halloween-caixinha.jpg" alt="Caixinha com quatro bombons de caveira e abóbora" loading="lazy">
+        <span class="slide-body">
+          <strong>Caixinha com 4 bombons</strong>
+          <span>Lembrancinha pronta para presentear</span>
+        </span>
+      </a>
+    </div>
+    <button class="nav prev" type="button" id="prev" aria-label="Foto anterior">‹</button>
+    <button class="nav next" type="button" id="next" aria-label="Próxima foto">›</button>
+    <div class="dots" id="dots" role="tablist" aria-label="Escolher foto"></div>
+  </section>
+
+  <div class="wavy" aria-hidden="true"></div>
+
+  <!-- ============ CARDÁPIO ============ -->
+  <section aria-labelledby="t-cardapio">
+    <h2 id="t-cardapio" class="label">Cardápio</h2>
+    <div class="grid">
+      <a class="tile" data-wa="Oi! Quero encomendar um ovo de colher. Pode me passar sabores e tamanhos disponíveis?" href="https://wa.me/5581996868253">
+        <img src="img/ovos.jpg" alt="Ovo de colher com morangos" loading="lazy">
+        <span>Ovos de colher</span>
+      </a>
+      <a class="tile" data-wa="Oi! Quero encomendar brownie. Quais opções vocês têm?" href="https://wa.me/5581996868253">
+        <img src="img/brownies.jpg" alt="Brownie com cobertura de chocolate" loading="lazy">
+        <span>Brownies</span>
+      </a>
+      <a class="tile" data-wa="Oi! Vi os chocolates modelados (como o joystick) e quero encomendar. Qual o valor e o prazo?" href="https://wa.me/5581996868253">
+        <img src="img/modelados.jpg" alt="Joystick de chocolate recheado" loading="lazy">
+        <span>Modelados</span>
+      </a>
+      <a class="tile" data-wa="Oi! Quero montar um presente com doces. Quais opções de caixa vocês têm?" href="https://wa.me/5581996868253">
+        <img src="img/presentes.jpg" alt="Caixas douradas de presente com doces" loading="lazy">
+        <span>Presentes</span>
+      </a>
+    </div>
+
+    <a class="btn btn-sec" data-wa="Oi! Quero uma caixa de brigadeiros. Quais tamanhos e sabores vocês têm?" href="https://wa.me/5581996868253">
+      Encomendar caixa de brigadeiros
+    </a>
+    <a class="btn btn-sec" data-wa="Oi! Quero um orçamento de doces para festa.&#10;Data: &#10;Nº de convidados: " href="https://wa.me/5581996868253">
+      Pedir orçamento para festa
+    </a>
+    <button class="btn btn-sec btn-adult" type="button" id="open-adult" aria-haspopup="dialog">
+      <span class="pill18">+18</span> Chocolates para festas adultas
+    </button>
+  </section>
+
+  <!-- ============ COMO ENCOMENDAR ============ -->
+  <section aria-labelledby="t-como">
+    <h2 id="t-como" class="label">Como encomendar</h2>
+    <ol class="steps">
+      <li><b>1</b>Escolha o doce</li>
+      <li><b>2</b>Chame no WhatsApp</li>
+      <li><b>3</b>Pague 50% de sinal</li>
+      <li><b>4</b>Retire ou receba</li>
+    </ol>
+    <ul class="info">
+      <li><b>Sinal:</b> 50% do valor para iniciar a produção</li>
+      <li><b>Retirada:</b> disponível, local combinado pelo WhatsApp</li>
+      <li><b>Entrega:</b> disponível, combinada pelo WhatsApp</li>
+      <!-- PENDENTE: remover o atributo hidden quando a cliente responder -->
+      <li hidden><b>Antecedência:</b> PENDENTE</li>
+    </ul>
+  </section>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="foot">
+    <a class="btn btn-ghost" href="https://www.instagram.com/seubezerrabrigaderia/" target="_blank" rel="noopener">
+      Ver fotos de clientes no Instagram
+    </a>
+    <nav class="social" aria-label="Redes">
+      <a href="https://www.instagram.com/seubezerrabrigaderia/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8c-.1-1.6-.4-3-1.6-4.2S17.6 2.2 16 2.1C14.4 2 9.6 2 8 2.1 6.4 2.2 5 2.5 3.8 3.7S2.2 6.4 2.1 8C2 9.6 2 14.4 2.1 16c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.4.1 8 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.4 0-8zm-2 9.7a3.2 3.2 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.7.4s-4.4.1-5.7-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.3-.4-4.3-.4-5.7s-.1-4.4.4-5.7a3.2 3.2 0 0 1 1.8-1.8C8 3.9 11 4 12 4s4.4-.1 5.7.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.7s.1 4.4-.4 5.7z"/></svg>
+      </a>
+      <a data-wa="Oi! Vim pelo link do Instagram 🍫" href="https://wa.me/5581996868253" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>
+      </a>
+    </nav>
+    <p class="small">© Seu Bezerra Brigaderia · @seubezerrabrigaderia</p>
+  </footer>
+</main>
+
+<!-- ============ CONFIRMAÇÃO +18 ============ -->
+<div class="modal" id="adult" role="dialog" aria-modal="true" aria-labelledby="adult-t" hidden>
+  <div class="modal-card">
+    <span class="pill18 big">+18</span>
+    <h2 id="adult-t">Conteúdo para maiores de 18 anos</h2>
+    <p>Chocolates temáticos para despedida de solteira, chá de lingerie e festas adultas. Ao continuar, você confirma que tem 18 anos ou mais.</p>
+    <a class="btn btn-main" id="adult-go" data-wa="Oi! Tenho mais de 18 anos e quero saber sobre os chocolates temáticos para festa 🔥" href="https://wa.me/5581996868253">
+      Tenho 18+ · Falar no WhatsApp
+    </a>
+    <button class="btn btn-ghost" type="button" id="adult-close">Voltar</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
