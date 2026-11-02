@@ -28,7 +28,9 @@ Site estático: não precisa de build. Basta abrir `index.html` ou publicar a pa
 - [x] Retirada: disponível (local combinado pelo WhatsApp)
 - [x] Sinal de 50% para iniciar a produção
 - [ ] Formas de pagamento (Pix? cartão?)
-- [ ] Fotos em melhor resolução de cada categoria
+- [x] Fotos em alta de ovos de colher, brigadeiros, modelados, presentes e bombons
+- [ ] Foto em alta dos brownies e da Caixa Morango & Brigadeiro (destaque)
+- [ ] Confirmar nomes dos produtos do carrossel
 - [ ] Sabores e preços atuais, se forem entrar na página
 
 Quando chegarem, preencha as linhas com `hidden` no bloco `class="info"` em `index.html` e remova o atributo.
