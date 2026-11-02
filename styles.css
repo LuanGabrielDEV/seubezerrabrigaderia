@@ -88,18 +88,19 @@ h1 { font-family: var(--display); font-weight: 400; font-size: 1.9rem; line-heig
 .pill18.big { height: 34px; min-width: 52px; font-size: 1rem; border-radius: 10px; }
 
 /* ---------- carrossel de destaques ---------- */
-.carousel { position: relative; margin-top: 4px; gap: 10px; }
+.carousel { position: relative; margin-top: 4px; gap: 10px; container-type: inline-size; }
 .track { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .track::-webkit-scrollbar { display: none; }
 .track:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-.slide { position: relative; flex: 0 0 100%; scroll-snap-align: center; display: block; text-decoration: none; border-radius: 20px; overflow: hidden; background: var(--choc-700); border: 1.5px solid rgba(245,196,0,.3); }
+.slide { position: relative; flex: 0 0 100%; scroll-snap-align: center; display: flex; flex-direction: column; text-decoration: none; border-radius: 20px; overflow: hidden; background: var(--choc-700); border: 1.5px solid rgba(245,196,0,.3); }
+.slide-media { display: block; overflow: hidden; }
 .slide img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-.slide-body { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; gap: 2px; padding: 48px 16px 16px; background: linear-gradient(to top, rgba(26,16,10,.94) 0%, rgba(26,16,10,.75) 55%, transparent 100%); }
+.slide-body { flex: 1; display: flex; flex-direction: column; gap: 2px; padding: 12px 16px 16px; border-top: 1.5px solid rgba(245,196,0,.22); }
 .slide-body strong { font-family: var(--display); font-weight: 400; font-size: 1.25rem; line-height: 1.2; }
 .slide-body > span { color: var(--cream-muted); font-size: .9rem; }
 .slide-body::after { content: "Quero esse →"; color: var(--gold); font-weight: 600; font-size: .92rem; margin-top: 4px; }
 .badge { position: absolute; top: 12px; left: 12px; z-index: 1; background: var(--gold); color: var(--choc-800); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 99px; }
-.nav { position: absolute; top: calc(50% - 38px); width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid rgba(245,196,0,.45); background: rgba(26,16,10,.7); color: var(--gold); font: 600 1.5rem/1 var(--body); display: grid; place-items: center; padding: 0 0 3px; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.nav { position: absolute; top: calc(50cqw - 19px); width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid rgba(245,196,0,.45); background: rgba(26,16,10,.7); color: var(--gold); font: 600 1.5rem/1 var(--body); display: grid; place-items: center; padding: 0 0 3px; cursor: pointer; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 .nav:focus-visible, .dots button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 .nav.prev { left: 10px; }
 .nav.next { right: 10px; }
@@ -201,7 +202,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: 1.9rem; line-heig
   .wavy { animation: drift 1.6s linear infinite; }
 
   /* carrossel: zoom lento na foto ativa e texto subindo */
-  .slide img { transform-origin: 50% 60%; }
+  .slide img { transform-origin: 50% 50%; }
   .slide.is-active img { animation: zoom 7s ease-out both; }
   .slide.is-active .slide-body > *, .slide.is-active .slide-body::after { animation: rise .6s cubic-bezier(.2,.75,.25,1) backwards; }
   .slide.is-active .slide-body > span { animation-delay: .08s; }
